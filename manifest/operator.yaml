@@ -15,7 +15,7 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: spark-operator
-    namespace: default
+    namespace: spark 
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -44,7 +44,8 @@ spec:
         - name: DEFAULT_SPARK_APP_IMAGE
           value: "quay.io/radanalyticsio/openshift-spark:2.4-latest"
         - name: DEFAULT_SPARK_CLUSTER_IMAGE
-          value: "quay.io/jkremser/openshift-spark:2.3-latest"
+          value: "quay.io/mbach/openshift-spark:latest"
+       #  value: "quay.io/jkremser/openshift-spark:2.3-latest"
         #- name: CRD # if false, the operator will watch on ConfigMaps
         #  value: "true"
         #- name: FULL_RECONCILIATION_INTERVAL_S
